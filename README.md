@@ -10,7 +10,7 @@ You can install the plugin in your system with:
 
 ``` sh
 curl -sSfL \
-  https://github.com/EnterpriseDB/kubectl-cnp/raw/master/install.sh | \
+  https://github.com/EnterpriseDB/kubectl-cnp/raw/main/install.sh | \
   sudo sh -s -- -b /usr/local/bin
 ```
 
