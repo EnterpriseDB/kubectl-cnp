@@ -37,8 +37,6 @@ against the relative line in the checksums file:
 
 ```
 CertUtil -hashfile <tar-file> SHA256
-
-type <tar-file>.sha256
 ```
 
 Now you can extract the contents of the TAR archive using the following
