@@ -7,6 +7,7 @@ an OpenShift environment.
 For details, please refer to Cloud Native PostgreSQL documentation.
 
 ## Mac OS and Linux install
+
 You can install the plugin in your system with:
 
 ``` sh
@@ -18,16 +19,39 @@ curl -sSfL \
 The plugin requires the Cloud Native PostgreSQL operator to be
 installed in the Kubernetes/Openshift cluster.
 
-## Windows Install
+## Windows install
 
-The best way to install the plugin on Windows is go to the [releases page](https://github.com/EnterpriseDB/kubectl-cnp/releases) and get the most recent release for your Windows architecture. For example, if you are using x86_64 Windows you would [download the x86_64 architecture version](https://github.com/EnterpriseDB/kubectl-cnp/releases/download/v1.13.0/kubectl-cnp_1.13.0_windows_x86_64.tar.gz).
+To install the plugin on Windows go to the [releases
+page](https://github.com/EnterpriseDB/kubectl-cnp/releases) and get the most
+recent release for your Windows architecture.
 
-OPTIONAL: you can then check the hash of the **tar file** that you downloaded by running:
+For example, if you are using an `x86_64` build of Windows, you would download
+the file named `kubectl-cnp_<version>_windows_x86_64.tar.gz`.
+
+The release includes a checksum file, named
+`kubectl-cnp-<version>-checksums.txt`, that can be used to validate the
+integrity of the Kubectl binary.
+
+To validate the file you can compare the output of the following command
+against the relative line in the checksums file:
+
 ```
-CertUtil -hashfile kubectl-cnp_1.13.0_windows_x86_64.tar.gz SHA256
-```
-where "kubectl-cnp_1.13.0_windows_x86_64.tar.gz" would be subsituted with the name of the **tar file** that you downloaded. 
-You will compare the hash from the above CertUtil command with the hash next to the version of kubectl-cnp that you downloaded in the [checksums.txt](https://github.com/EnterpriseDB/kubectl-cnp/releases/download/v1.13.0/kubectl-cnp-1.13.0-checksums.txt) file.
+CertUtil -hashfile <tar-file> SHA256
 
-Now you can add the ```kubectl-cnp.exe``` to the same directory that contains your ```kubectl.exe``` to use the plugin.
+type <tar-file>.sha256
+```
+
+Now you can extract the contents of the TAR archive using the following
+command:
+
+```
+tar xvzf <tar-file>
+```
+
+You can copy the `kubectl-cnp.exe` file in any directory pointed by your `PATH`
+environment variable, or prepend or append the Kubectl Cnp binary folder to
+your `PATH` environment variable.
+
+The directory where `kubectl.exe` is is usually a good choice for copying the
+`kubectl-cnp.exe` file to.
 
